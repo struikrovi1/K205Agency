@@ -11,5 +11,9 @@ namespace K205Agency.Data
         }
 
         public DbSet<Masthead> Mastheads { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<About> Abouts { get; set; }
     }
 }

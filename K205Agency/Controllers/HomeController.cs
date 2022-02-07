@@ -2,6 +2,7 @@
 using K205Agency.Models;
 using K205Agency.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace K205Agency.Controllers
@@ -23,7 +24,9 @@ namespace K205Agency.Controllers
             HomeVM homeVM = new()
             {
                 Masthead = _context.Mastheads.FirstOrDefault(),
-                Services = _context.Services.ToList()
+                Services = _context.Services.ToList(),
+                Portfolios = _context.Portfolios.Include(x=>x.Category).ToList(),
+                Abouts = _context.Abouts.ToList()
             };
             
             return View(homeVM);

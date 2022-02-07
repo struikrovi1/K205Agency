@@ -6,5 +6,7 @@ namespace K205Agency.ViewModel
     {
         public Masthead Masthead { get; set; }
         public List<Service> Services { get; set; }
+        public List<Portfolio> Portfolios { get; set; }
+        public List<About> Abouts { get; set; }
     }
 }

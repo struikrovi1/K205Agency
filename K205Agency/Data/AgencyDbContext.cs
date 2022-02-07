@@ -15,5 +15,7 @@ namespace K205Agency.Data
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<ContactUs> ContactUs { get; set; }
     }
 }

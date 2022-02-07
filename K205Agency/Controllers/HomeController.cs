@@ -19,6 +19,10 @@ namespace K205Agency.Controllers
             _context = context;
         }
 
+        // get post put delete
+
+
+        [HttpGet]
         public IActionResult Index()
         {
             HomeVM homeVM = new()
@@ -30,6 +34,16 @@ namespace K205Agency.Controllers
             };
             
             return View(homeVM);
+        }
+
+        [HttpPost]
+        public IActionResult Index(ContactUs contactUs)
+        {
+            _context.ContactUs.Add(contactUs);
+            _context.SaveChanges();
+
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()

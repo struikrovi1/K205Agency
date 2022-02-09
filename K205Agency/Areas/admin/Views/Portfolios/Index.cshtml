@@ -1,1 +1,6 @@
-﻿Bu portfolio hissesidi
+﻿@model AdminVM
+
+@foreach (var item in Model.Portfolios)
+{
+    <h1>@item.Name</h1>
+}

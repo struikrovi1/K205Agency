@@ -2,6 +2,7 @@
 using K205Agency.Data;
 using K205Agency.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace K205Agency.Areas.admin.Controllers
 {
@@ -15,14 +16,9 @@ namespace K205Agency.Areas.admin.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            AdminVM vm = new()
-            {
-                Portfolios = _context.Portfolios.ToList(),
-            };
-            
-            return View(vm);
+            return View(await _context.Portfolios.ToListAsync());
         }
     }
 }

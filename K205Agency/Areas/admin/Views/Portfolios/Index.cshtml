@@ -6,7 +6,7 @@
 <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><a class = "btn btn-info" href = "/admin/portfolios/create">Create</a></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -38,9 +38,10 @@
                                                 <td>
                                                     <img width="100" src="@item.PhotoURL" />
                                                 </td>
-                                                <td>@item.Category.CategoryName</td>
-                                                <td>
-
+                                             
+                                                <td class= "d-flex align-items-center"> 
+                                                   <a href = "/admin/portfolios/detail/@item.ID" class="btn btn-danger"> Detail</a> &nbsp; &nbsp;
+                                                    <a href = "/admin/portfolios/edit/@item.ID" class="btn btn-warning"> Edit</a>
                                                 </td>
                                             </tr>
                                         }

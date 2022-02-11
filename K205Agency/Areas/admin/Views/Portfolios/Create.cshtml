@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model Portfolio
+
+<form method = "post">
+
+    <div class = "col-lg-5">
+        
+
+        <label asp-for="Description"></label>
+           <input class = "form-control mb-2" asp-for = "Description" />
+
+            <label asp-for="Client"></label>
+           <input class = "form-control mb-2" asp-for = "Client" />
+
+            <label asp-for="PhotoURL"></label>
+           <input class = "form-control mb-2" asp-for = "PhotoURL" />
+
+            <label asp-for="Name"></label>
+           <input class = "form-control mb-2" asp-for= "Name" />
+
+            <label asp-for="CategoryID"></label>
+         @*  <input class = "form-control mb-2" asp-for = "CategoryID" />*@
+
+           <select asp-for="CategoryID" class = "form-control mb-2" >
+            @foreach (var cat in @ViewBag.Category)
+            {
+                <option value = "@cat.ID"> @cat.CategoryName</option>
+            }
+        </select>
+
+            <label asp-for="CreatedDate"></label>
+           <input class = "form-control mb-2" asp-for = "CreatedDate" />
+
+            <label asp-for="Client"></label>
+           <input class = "form-control mb-2" asp-for = "Client" />
+
+           <input class= "btn btn-success btn-sm" type = "submit" value = "Create" />
+    </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+</form>

@@ -47,8 +47,10 @@ namespace K205Agency.Areas.admin.Controllers
         {
             try
             {
-                _context.Entry(portfolio);
-                await _context.SaveChangesAsync();  
+                var updateEntity=_context.Entry(portfolio);
+                updateEntity.State = EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             { 

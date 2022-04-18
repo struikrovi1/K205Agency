@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model About
+
+<form method = "post" enctype = "multipart/form-data">
+<div class ="col-lg-5">
+    <label>Title</label>
+<input class="form-control mb-2" asp-for = "Title" />
+
+    <label>Description</label>
+<input class="form-control mb-2" asp-for = "Description" />
+
+    <label>PhotoUrl</label>
+<input class="form-control mb-2" type="file" asp-for = "PhotoURL"  name = "Image" />
+<img class = "mb-2" width = "100" src = "@Model.PhotoURL"/>
+<input type ="hidden" name = "OldPhoto" value = "@Model.PhotoURL" />
+    <label>CreatedDate</label>
+<input class="form-control mb-2" asp-for = "CreatedDate" />
+
+    <label>PublishDate</label>
+<input class="form-control mb-2" asp-for = "PublishDate" /> 
+
+<input class="form-control mb-2" asp-for = "ID" type = "hidden" />
+
+<input  class = "btn btn-primary" type = "submit" vaue = "Edit"/>
+</div>
+</form>
